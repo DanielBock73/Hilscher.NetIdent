@@ -28,6 +28,8 @@ jobs:
     - name: Package the project
       run:  dotnet pack --configuration Release
     - name: Deployment the package
-      run: dotnet nuget push "bin/Release/*.nupkg" --api-key '${{ secrets.GITHUB_PAT_NUGET }}' --source github
+      env:
+        GITHUB_PAT_NUGET: ${{ secrets.GITHUB_PAT_NUGET }}
+      run: dotnet nuget push "bin/Release/*.nupkg" --api-key "$GITHUB_PAT_NUGET" --source github
       
       
