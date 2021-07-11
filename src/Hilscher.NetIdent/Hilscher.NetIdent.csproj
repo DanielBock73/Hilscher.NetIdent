@@ -6,7 +6,7 @@
     <Version>0.0.1</Version>
     <Authors>Daniel Bock</Authors>
     <PackageDescription>This Hilscher.NetIdent package is used to scan for devices and set IP-adress via Hilscher protocol "NetIdent"</PackageDescription>
-    <RepositoryUrl>https://github.com/OWNER/REPOSITORY</RepositoryUrl>
+    <RepositoryUrl>https://github.com/DanielBock73/Hilscher.NetIdent</RepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>
