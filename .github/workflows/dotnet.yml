@@ -28,4 +28,4 @@ jobs:
     - name: Package the project
       run:  dotnet pack --configuration Release
     - name: Deployment the package
-      run: dotnet nuget push "src/Hilscher.NetIdent/bin/Release/*.nupkg" --api-key ${{ secrets.GITHUB_PAT_NUGET }} --source github
+      run: dotnet nuget push "src/Hilscher.NetIdent/bin/Release/*.nupkg" --api-key '${{ secrets.GITHUB_PAT_NUGET }}' --source github
