@@ -33,7 +33,8 @@ jobs:
     - name: Deployment the package
       env: 
         GITHUB_PAT_NUGET: ${{ secrets.GITHUB_PAT_NUGET }}
-      run: dotnet nuget push "src/Hilscher.NetIdent/bin/Release/*.nupkg" \
-            --source ${{ env.NUGET_URL }} \
-            --api-key ${{ secrets.GITHUB_PAT_NUGET }} \
-            --skip-duplicate
+      run: |
+        dotnet nuget push "src/Hilscher.NetIdent/bin/Release/*.nupkg" \
+          --source github \
+          --api-key ${{ secrets.GITHUB_PAT_NUGET }} \
+          --skip-duplicate
