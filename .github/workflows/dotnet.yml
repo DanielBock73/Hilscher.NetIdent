@@ -36,5 +36,5 @@ jobs:
       run: |
         dotnet nuget push "src/Hilscher.NetIdent/bin/Release/*.nupkg" \
           --source github \
-          --api-key ${{ secrets.GITHUB_PAT_NUGET }} \
+          --api-key $GITHUB_PAT_NUGET \
           --skip-duplicate
