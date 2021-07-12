@@ -10,7 +10,9 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-
+    
+    env:
+      DOTNET_CLI_TELEMETRY_OPTOUT: true
     steps:
     - uses: actions/checkout@v2
     - name: Setup .NET
@@ -28,4 +30,6 @@ jobs:
     - name: Package the project
       run:  dotnet pack --configuration Release
     - name: Deployment the package
-      run: dotnet nuget push "src/Hilscher.NetIdent/bin/Release/*.nupkg" --api-key '${{ secrets.GITHUB_PAT_NUGET }}' --source github
+      env: 
+        GITHUB_PAT_NUGET: ${{ secrets.GITHUB_PAT_NUGET }}
+      run: dotnet nuget push "src/Hilscher.NetIdent/bin/Release/*.nupkg" --api-key "$GITHUB_PAT_NUGET" --source github
