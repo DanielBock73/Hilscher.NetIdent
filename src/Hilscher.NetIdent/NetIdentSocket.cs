@@ -27,7 +27,7 @@ namespace Hilscher.netIdent
             deviceFoundFunc(NetIdentProtocolMessage.Deserialize(recvBuffer));
           }
         }
-        catch (SocketException)
+        catch (SocketException ex)
         {
         }
       });
