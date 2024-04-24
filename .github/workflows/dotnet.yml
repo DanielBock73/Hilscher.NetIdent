@@ -34,9 +34,9 @@ jobs:
       uses: gittools/actions/gitversion/execute@v0.9.7      
     - name: Build
       run: |
-        dotnet pack -p:Configuration=Release \
-                    -p:PackageVersion=${{ steps.gitversion.outputs.NuGetVersionV2 }}.${{ steps.gitversion.outputs.CommitsSinceVersionSource }} \
-                    -p:InformationalVersion=${{ steps.gitversion.outputs.InformationalVersion }}
+        dotnet build -p:Configuration=Release \
+                     -p:PackageVersion=${{ steps.gitversion.outputs.NuGetVersionV2 }}.${{ steps.gitversion.outputs.CommitsSinceVersionSource }} \
+                     -p:InformationalVersion=${{ steps.gitversion.outputs.InformationalVersion }}
     - name: Test
       run: dotnet test --configuration Release --no-build --verbosity normal
     - name: Package the project
